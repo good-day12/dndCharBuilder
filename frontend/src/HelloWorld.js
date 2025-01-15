@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 function HelloWorld() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('default');
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/hello-world/')
+    // axios.get('http://localhost:8000/api/hello-world/')
+      axios.post('http://localhost:8000/api/hello-world/1')
       .then(response => {
         setMessage(response.data.message);
       })
@@ -17,7 +20,7 @@ function HelloWorld() {
   return (
     <div>
       <h1>Hello, World!</h1>
-      <p>{message}</p>
+      <p>!{message}!</p>
     </div>
   );
 }

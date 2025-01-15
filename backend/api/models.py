@@ -3,7 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Character(models.Model):
-    character_name = models.CharField(max_length=25)
+    name_text = models.CharField(max_length=25)
+    strength_int = models.IntegerField(default=0)
+    
     def __str__(self):
         return self.character_name
 
