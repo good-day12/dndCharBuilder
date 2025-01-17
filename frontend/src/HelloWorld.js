@@ -7,8 +7,10 @@ function HelloWorld() {
   const [message, setMessage] = useState('default');
 
   useEffect(() => {
-    // axios.get('http://localhost:8000/api/hello-world/')
-      axios.post('http://localhost:8000/api/hello-world/1')
+    //so for a get request there must be a JSON object named params in order to pass JSON to backend
+    axios.get('http://localhost:8000/api/hello-world/1', { params: {"test": "this is a test"} } )
+      // axios.post('http://localhost:8000/api/hello-world/1', { content_params: {"test": "this is a test"} } )
+      // idk what its supposed to be named for the post request.
       .then(response => {
         setMessage(response.data.message);
       })
