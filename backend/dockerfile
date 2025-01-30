@@ -1,0 +1,29 @@
+FROM python
+
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+WORKDIR /app
+
+COPY . /app/
+
+EXPOSE 8000 
+# ^ didn't need this for the run command, docker run -d -p 8000:8000 --restart unless-stopped my-docker-practice
+# I think the -p (port flag) 8000:8000 (map container 8000 to localhost 8000) made the expose unneccesary 
+# from the docker documentation: 
+# The EXPOSE instruction marks that our final image has a service listening on port 8000.
+# This instruction isn't required, but it is a good practice and helps tools and team members understand what this application is doing.
+
+# CMD ["python", "mysite/manage.py", "runserver"] < - this didn't work at all
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"] 
+# , "0.0.0.0:8000"
+
+# docker commands to build and run container
+#build:
+    # docker build -t my-docker-practice .
+    # ^ don't forget the .  it is very important to use parent file to build
+    # the -t tag is to name the image
+#run:
+    # docker run -d -p 8000:8000 --restart unless-stopped my-docker-practice
