@@ -2,9 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+class User(models.Model):
+    username = models.CharField(max_length=64)
+    password = models.CharField(max_length=64)
+
 class Character(models.Model):
     name_text = models.CharField(max_length=25)
     strength_int = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.deletion)
     
     def __str__(self):
         return self.character_name

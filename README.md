@@ -18,3 +18,5 @@ We want a user to be able to log into our website, create multiple different DnD
 
 Andre notes:
 Research Django, review database notes, 
+future thoughts: nginx for reverse proxy, how would something like these containers work in production?
+    how would we programatically find the right ip address and ports to send requests to the backend
