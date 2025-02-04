@@ -24,9 +24,12 @@ def hello_world(request, character_id):
 
 @api_view(['POST'])
 def userName(request):
-    # response = str(request.body)
-    response = json.loads(request.body.decode('utf-8'))
-    return Response({'userName': response['userName'] })
-
+    # for stuff that isn't form data
+    # response = json.loads(request.body.decode('utf-8'))
+    # return Response({'userName': response['userName'] })
+    ###############
+    #for stuff that is form data
+    response = str(request.POST['userName'])
+    return Response({'userName': response })
 # request.POST is only for form-encoded data. 
 # If you are posting JSON, then you should use request.body instead.
