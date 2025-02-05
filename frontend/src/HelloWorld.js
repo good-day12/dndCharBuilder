@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 const baseUrl = "http://localhost:8000/api/"
 
@@ -20,7 +19,6 @@ function HelloWorld() {
 
   return (
     <div>
-      <Link to="/login">Login</Link>
       <h1>Hello, World!</h1>
       <p>!{message}!</p>
         <button onClick={handleClick}>

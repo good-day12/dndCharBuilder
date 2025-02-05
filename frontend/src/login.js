@@ -10,7 +10,7 @@ function LoginPage(){
             <h1>this is the login page</h1>
             <form method="post" onSubmit={handleSubmit}>
                 <label>Username: <input name="userName" /></label>
-                <label>Password: <input name="Password" /></label>
+                <label>Password: <input name="password" /></label>
                 <button type="submit">Submit form</button>
             </form>
         </div>
