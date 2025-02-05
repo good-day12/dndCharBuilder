@@ -9,7 +9,7 @@ function HelloWorld() {
 
   useEffect(() => {
     //so for a get request there must be a JSON object named params in order to pass JSON to backend
-    axios.get('http://localhost:8000/api/hello-world/1', { params: {"test": "I love Nicholas Glen Hosman!"} } )
+    axios.get('http://localhost:8000/api/hello-world/1', { params: {"test": "I love Nicholas Glen Hosman so, so much!"} } )
       .then(response => {
         setMessage(response.data.message);
       })

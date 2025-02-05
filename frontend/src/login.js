@@ -5,7 +5,6 @@ const baseUrl = "http://localhost:8000/api/"
 
 function LoginPage(){
 
-
     return (
         <div>
             <h1>this is the login page</h1>
@@ -21,7 +20,6 @@ function LoginPage(){
 function handleSubmit(e){
     e.preventDefault();
     const form = e.target;
-    const formData = new FormData(form);
 
     axios.post(baseUrl + "userName", form)
     .then(response => {
@@ -30,6 +28,7 @@ function handleSubmit(e){
 }
 
 //     // Or you can work with it as a plain object:
+//     const formData = new FormData(form);
 //     const formJson = Object.fromEntries(formData.entries());
 //     console.log(formJson);
 
