@@ -1,0 +1,24 @@
+FROM node
+
+# Set the working directory inside the container
+WORKDIR /app
+ 
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+RUN npm install
+
+COPY . . 
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
+# ^ this totally worked
+
+# docker commands to build and run container
+#build:
+    # docker build -t my-docker-react-practice .
+    # ^ don't forget the .  it is very important to use parent file to build
+    # the -t tag is to name the image
+#run:
+    # docker run -d -p 3000:3000 --restart unless-stopped my-docker-react-practice
