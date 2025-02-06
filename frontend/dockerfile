@@ -2,13 +2,13 @@ FROM node
 
 # Set the working directory inside the container
 WORKDIR /app
- 
+
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-RUN npm install
+RUN npm install react-scripts --save
 
-COPY . . 
+COPY . .
 
 EXPOSE 3000
 
