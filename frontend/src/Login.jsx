@@ -27,7 +27,7 @@ function handleSubmit(e){
     })
 }
 
-//     // Or you can work with it as a plain object:
+//     Or you can work with it as a plain object:
 //     const formData = new FormData(form);
 //     const formJson = Object.fromEntries(formData.entries());
 //     console.log(formJson);

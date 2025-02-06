@@ -4,6 +4,7 @@ import axios from 'axios';
 const baseUrl = "http://localhost:8000/api/"
 
 function HelloWorld() {
+    console.log("HelloWorld ran.");
   const [message, setMessage] = useState('default');
 
   useEffect(() => {
